@@ -21,8 +21,14 @@
     "noUnusedParameters": true,
     "baseUrl": ".",
     "paths": {
-      "@/styles/*": ["styles/*"],
-    }
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
+      ]
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
