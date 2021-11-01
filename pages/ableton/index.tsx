@@ -16,6 +16,7 @@ import CyanRow from "@/components/ableton/CyanRow";
 import PurpleRow from "@/components/ableton/PurpleRow";
 import BlueRow from "@/components/ableton/BlueRow";
 import Footer from "@/components/ableton/Footer";
+import Video from "@/components/ableton/Video";
 
 const Home: NextPage = () => {
   return (
@@ -76,6 +77,8 @@ const Home: NextPage = () => {
               people we make it for.
             </Paragraph>
           </TextColumn>
+
+          <Video />
 
           <TextColumn>
             <HeadingOne>
