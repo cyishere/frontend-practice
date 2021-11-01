@@ -29,7 +29,7 @@ const YellowColumn: React.FC = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   position: relative;
   display: grid;
   grid-template-rows: repeat(7, ${UNIT});

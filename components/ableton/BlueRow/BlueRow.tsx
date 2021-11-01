@@ -38,7 +38,7 @@ const BlueRow: React.FC = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(12, ${UNIT});
   grid-template-rows: repeat(5, ${UNIT});
