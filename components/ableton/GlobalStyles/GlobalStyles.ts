@@ -38,7 +38,8 @@ const GlobalStyles = createGlobalStyle`
     --clr-black: #000000;
 
     /* font family */
-    --ff-primary: futura-pt,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    /* --ff-primary: futura-pt,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif; */
+    --ff-primary: 'Josefin Sans', sans-serif;
 
     /* font weight */
     --fw-normal: 400;
@@ -52,6 +53,10 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     color: var(--clr-blue);
+    text-decoration: none;
+  }
+
+  a:hover {
     text-decoration: none;
   }
 `;

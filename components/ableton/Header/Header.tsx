@@ -108,10 +108,8 @@ const PrimaryNavLinkSpecial = styled(PrimaryNavLink)`
 
 const IconWrapper = styled.span`
   position: absolute;
-  top: 0;
+  top: -3px;
   right: 0;
-  bottom: 0;
-  margin: auto 0;
 `;
 
 const PrimaryNavLinkCallout = styled(PrimaryNavLink)`
