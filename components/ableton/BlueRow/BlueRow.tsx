@@ -11,7 +11,7 @@ const BlueRow: React.FC = () => {
     <Wrapper>
       <Left>
         <Image
-          src="/images/photo-8.jpeg"
+          src="/images/ableton/photo-8.jpeg"
           alt=""
           width={655}
           height={655}

@@ -28,7 +28,7 @@ const Home: NextPage = () => {
         <Main>
           <BigPictureColumn>
             <Image
-              src="/images/hero-image.jpeg"
+              src="/images/ableton/hero-image.jpeg"
               alt=""
               width={1310}
               height={805}
@@ -116,7 +116,7 @@ const Home: NextPage = () => {
 
           <BigPictureColumn>
             <Image
-              src="/images/poster-meet-the-makers.jpeg"
+              src="/images/ableton/poster-meet-the-makers.jpeg"
               alt=""
               width={1310}
               height={737}

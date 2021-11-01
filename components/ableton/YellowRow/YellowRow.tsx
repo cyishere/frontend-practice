@@ -8,7 +8,7 @@ const YellowColumn: React.FC = () => {
     <Wrapper>
       <LeftImage>
         <Image
-          src="/images/photo-1.jpeg"
+          src="/images/ableton/photo-1.jpeg"
           alt=""
           width={655}
           height={655}
@@ -18,7 +18,7 @@ const YellowColumn: React.FC = () => {
 
       <RightImage>
         <Image
-          src="/images/photo-2.jpeg"
+          src="/images/ableton/photo-2.jpeg"
           alt=""
           width={524}
           height={393}

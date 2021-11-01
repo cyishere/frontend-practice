@@ -9,7 +9,7 @@ const Video: React.FC = () => {
       <Wrapper>
         <VideoWrapper>
           <Image
-            src="/images/video-cover.jpeg"
+            src="/images/ableton/video-cover.jpeg"
             alt=""
             width={786}
             height={442}

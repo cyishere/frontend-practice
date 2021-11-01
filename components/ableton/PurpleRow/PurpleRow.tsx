@@ -8,7 +8,7 @@ const PurpleRow: React.FC = () => {
     <Wrapper>
       <LeftImage>
         <Image
-          src="/images/photo-6.jpeg"
+          src="/images/ableton/photo-6.jpeg"
           alt=""
           width={524}
           height={393}
@@ -17,7 +17,7 @@ const PurpleRow: React.FC = () => {
       </LeftImage>
       <RightImage>
         <Image
-          src="/images/photo-7.jpeg"
+          src="/images/ableton/photo-7.jpeg"
           alt=""
           width={655}
           height={655}

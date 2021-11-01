@@ -8,7 +8,7 @@ const CyanRow: React.FC = () => {
     <Wrapper>
       <LeftImageTop>
         <Image
-          src="/images/photo-3.jpeg"
+          src="/images/ableton/photo-3.jpeg"
           alt=""
           width={524}
           height={393}
@@ -17,7 +17,7 @@ const CyanRow: React.FC = () => {
       </LeftImageTop>
       <LeftImageBottom>
         <Image
-          src="/images/photo-4.jpeg"
+          src="/images/ableton/photo-4.jpeg"
           alt=""
           width={524}
           height={393}
@@ -26,7 +26,7 @@ const CyanRow: React.FC = () => {
       </LeftImageBottom>
       <RightImage>
         <Image
-          src="/images/photo-5.jpeg"
+          src="/images/ableton/photo-5.jpeg"
           alt=""
           width={655}
           height={655}
