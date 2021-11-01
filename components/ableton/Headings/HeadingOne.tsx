@@ -6,6 +6,7 @@ const Wrapper = styled.h1`
   font-size: ${30 / 16}rem;
   font-weight: var(--fw-bold);
   line-height: 1.4;
+  margin-bottom: 0.4em;
 `;
 
 export default HeadingOne;
