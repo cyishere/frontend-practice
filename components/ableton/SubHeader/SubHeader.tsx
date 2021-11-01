@@ -28,6 +28,7 @@ const Wrapper = styled.div`
   top: 0;
   padding: 20px 40px;
   background-color: hsl(0deg 0% 100% / 0.9);
+  z-index: 9999;
 `;
 
 const List = styled(Flex)`

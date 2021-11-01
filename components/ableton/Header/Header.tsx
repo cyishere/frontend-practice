@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { Plus } from "react-feather";
 
 import { Logo } from "../Assets";
 import { PrimaryNavLink, SecondaryNavLink } from "../NavLink";
@@ -49,6 +50,16 @@ const Header: React.FC<HeaderProps> = () => {
                 <PrimaryNavLink>Help</PrimaryNavLink>
               </Link>
             </li>
+            <li>
+              <Link href="/ableton" passHref>
+                <PrimaryNavLinkSpecial>
+                  More
+                  <IconWrapper>
+                    <Plus />
+                  </IconWrapper>
+                </PrimaryNavLinkSpecial>
+              </Link>
+            </li>
           </MainList>
         </nav>
       </MainNavWrapper>
@@ -87,6 +98,20 @@ const MainList = styled(Flex)`
 
 const SubList = styled(Flex)`
   --gap: 32px;
+`;
+
+const PrimaryNavLinkSpecial = styled(PrimaryNavLink)`
+  color: var(--clr-orange);
+  padding-right: 2rem;
+  position: relative;
+`;
+
+const IconWrapper = styled.span`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto 0;
 `;
 
 const PrimaryNavLinkCallout = styled(PrimaryNavLink)`
