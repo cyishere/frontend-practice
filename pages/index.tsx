@@ -1,8 +1,10 @@
 import type { NextPage } from "next";
 import { Fragment } from "react";
-import Link from "next/link";
 import styled from "styled-components";
+import Link from "next/link";
+
 import SEO from "@/components/SEO";
+import GlobalStyles from "@/styles/GlobalStyles";
 
 const Home: NextPage = () => {
   return (
@@ -28,11 +30,13 @@ const Home: NextPage = () => {
           </p>
         </Header>
         <Main>
-          <ol>
-            <li>
+          <List>
+            <ListItem>
               <Link href="/ableton">Ableton</Link>
-            </li>
-          </ol>
+            </ListItem>
+            <ListItem>Monstercat</ListItem>
+            <ListItem>Déplacé Maison</ListItem>
+          </List>
         </Main>
         <Footer>
           <p>
@@ -44,6 +48,7 @@ const Home: NextPage = () => {
           </p>
         </Footer>
       </Wrapper>
+      <GlobalStyles />
     </Fragment>
   );
 };
@@ -73,6 +78,21 @@ const PageHeading = styled.h1`
 
 const Main = styled.main`
   margin-bottom: 3rem;
+`;
+
+const List = styled.ol`
+  list-style: revert;
+`;
+
+const ListItem = styled.li`
+  display: list-item;
+  &:not(:last-of-type) {
+    margin-bottom: 0.5em;
+  }
+
+  &::marker {
+    color: plum;
+  }
 `;
 
 const Footer = styled.footer`

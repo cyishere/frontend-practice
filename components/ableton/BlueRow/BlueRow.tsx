@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "react-feather";
 
+import { UNIT } from "../constants";
 import { HeadingOne } from "../Headings";
 
 const BlueRow: React.FC = () => {
@@ -39,8 +40,8 @@ const BlueRow: React.FC = () => {
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(12, 8.33rem);
-  grid-template-rows: repeat(5, 8.33rem);
+  grid-template-columns: repeat(12, ${UNIT});
+  grid-template-rows: repeat(5, ${UNIT});
 `;
 
 const Left = styled.div`

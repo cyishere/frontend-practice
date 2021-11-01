@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Image from "next/image";
 
+import { UNIT } from "../constants";
+
 const YellowColumn: React.FC = () => {
   return (
     <Wrapper>
@@ -30,8 +32,8 @@ const YellowColumn: React.FC = () => {
 const Wrapper = styled.div`
   position: relative;
   display: grid;
-  grid-template-rows: repeat(7, 8.33rem);
-  grid-template-columns: repeat(12, 8.33rem);
+  grid-template-rows: repeat(7, ${UNIT});
+  grid-template-columns: repeat(12, ${UNIT});
 
   &::before {
     content: "";
