@@ -6,7 +6,7 @@ I recreate some real website pages picked by [Frontend Practice](https://fronten
 
 ### To-Dos
 
-- [ ] Footer;
+- [x] Footer;
 - [ ] Sticky subheader fade out as scrolling;
 - [ ] Responsive for different screen sizes;
 - [ ] CSS Grid usage check (LearnWithJason video, scrimba course);
