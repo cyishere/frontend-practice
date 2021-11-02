@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,23 +8,13 @@ import { HeadingThree } from "../Headings";
 import SocialIconGroup from "../SocialIconGroup";
 import Paragraph from "../Paragraph";
 import { Logo } from "../Assets";
-
-const ListLinks = {
-  main: ["Register Live or Push", "About Ableton", "Jobs"],
-  education: [
-    "Offers for students and teachers",
-    "Ableton for the Classroom",
-    "Ableton for Colleges and Universities",
-  ],
-  community: [
-    "Find Ableton User Groups",
-    "Find Certified Training",
-    "Become a Certified Trainer",
-  ],
-  distributors: ["Find Distributors", "Try Push in-store"],
-};
+import Select from "../Select";
+import { FOOTER_LIST_LINKS, LANGUAGES, LOCATIONS } from "data/ableton";
 
 const Footer: React.FC = () => {
+  const [language, setLanguage] = useState("en");
+  const [location, setLocation] = useState("us");
+
   return (
     <Wrapper>
       <LogoRow>
@@ -37,13 +28,13 @@ const Footer: React.FC = () => {
 
       <Grid>
         <Column>
-          <FooterList items={ListLinks.main} />
+          <FooterList items={FOOTER_LIST_LINKS.main} />
           <SocialIconGroup />
         </Column>
 
         <Column>
           <HeadingThree>Education</HeadingThree>
-          <FooterList items={ListLinks.education} />
+          <FooterList items={FOOTER_LIST_LINKS.education} />
         </Column>
 
         <Column>
@@ -58,16 +49,44 @@ const Footer: React.FC = () => {
       <Grid>
         <Column>
           <HeadingThree>Community</HeadingThree>
-          <FooterList items={ListLinks.community} />
+          <FooterList items={FOOTER_LIST_LINKS.community} />
         </Column>
 
         <Column>
           <HeadingThree>Distributors</HeadingThree>
-          <FooterList items={ListLinks.distributors} />
+          <FooterList items={FOOTER_LIST_LINKS.distributors} />
         </Column>
 
         <Column>
           <HeadingThree>Language and Location</HeadingThree>
+
+          <FlexLeft>
+            <Select
+              label="Choose a language"
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+              width={118}
+            >
+              {LANGUAGES.map((op) => (
+                <option value={op.value} key={op.value}>
+                  {op.name}
+                </option>
+              ))}
+            </Select>
+
+            <Select
+              label="Choose a location"
+              value={location}
+              width={200}
+              onChange={(e) => setLocation(e.target.value)}
+            >
+              {LOCATIONS[0].options.map((location) => (
+                <option value={location.value} key={location.value}>
+                  {location.name}
+                </option>
+              ))}
+            </Select>
+          </FlexLeft>
         </Column>
       </Grid>
 
@@ -117,6 +136,12 @@ const Grid = styled.div`
 `;
 
 const Column = styled.div``;
+
+const FlexLeft = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 3px;
+`;
 
 const FlexBetween = styled.div`
   display: flex;
