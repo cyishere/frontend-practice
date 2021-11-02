@@ -42,6 +42,7 @@ const GlobalStyles = createGlobalStyle`
     --ff-primary: 'Josefin Sans', sans-serif;
 
     /* font weight */
+    --fw-light: 300;
     --fw-normal: 400;
     --fw-bold: 700;
   }

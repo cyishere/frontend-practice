@@ -12,10 +12,10 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <Wrapper>
       <MainNavWrapper>
-        <Link href="/">
-          <a>
+        <Link href="/" passHref>
+          <LogoWrapper>
             <Logo />
-          </a>
+          </LogoWrapper>
         </Link>
 
         <nav>
@@ -90,6 +90,13 @@ const Wrapper = styled.header`
 
 const MainNavWrapper = styled(Flex)`
   --gap: 40px;
+`;
+
+const LogoWrapper = styled.a`
+  svg {
+    width: 60px;
+    height: 28px;
+  }
 `;
 
 const MainList = styled(Flex)`
