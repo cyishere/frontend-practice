@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
-import Layout from "@/components/ableton/Layout/Layout";
+import Layout from "@/components/ableton/Layout";
 import MaxWidthWrapper from "@/components/ableton/MaxWidthWrapper";
 import { HeadingOne } from "@/components/ableton/Headings";
 import Paragraph from "@/components/ableton/Paragraph";

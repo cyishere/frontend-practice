@@ -34,6 +34,9 @@ const Home: NextPage = () => {
             <ListItem>
               <Link href="/ableton">Ableton</Link>
             </ListItem>
+            <ListItem>
+              <Link href="/backstagetalks">Backstage Talks</Link>
+            </ListItem>
             <ListItem>Monstercat</ListItem>
             <ListItem>Déplacé Maison</ListItem>
           </List>
