@@ -1,13 +1,20 @@
+import { CSSProperties, useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import Iframe from "react-iframe";
 
 import { Grid } from "../Grid";
 
 const Video: React.FC = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
   return (
     <Grid>
-      <Wrapper>
-        <VideoWrapper>
+      <Wrapper style={{ "--height": "442px" } as CSSProperties}>
+        <VideoWrapper
+          style={{ "--display": showVideo ? "none" : "block" } as CSSProperties}
+          onClick={() => setShowVideo(!showVideo)}
+        >
           <Image
             src="/images/ableton/video-cover.jpeg"
             alt=""
@@ -19,6 +26,16 @@ const Video: React.FC = () => {
             <PlayCircle />
           </PlayIcon>
         </VideoWrapper>
+
+        <IFrameWrapper
+          style={{ "--display": showVideo ? "block" : "none" } as CSSProperties}
+        >
+          <Iframe
+            url="https://www.youtube.com/watch?v=9SbnhgjeyXA"
+            width="100%"
+            height="442"
+          />
+        </IFrameWrapper>
         <Captain>Why Ableton - Juanpe Bolivar</Captain>
       </Wrapper>
     </Grid>
@@ -27,10 +44,13 @@ const Video: React.FC = () => {
 
 const Wrapper = styled.figure`
   grid-column: 4 / 10;
+  position: relative;
+  height: var(--height);
 `;
 
 const VideoWrapper = styled.div`
-  position: relative;
+  /* opacity: var(--opacity); */
+  display: var(--display);
   cursor: pointer;
 `;
 
@@ -60,6 +80,10 @@ const PlayCircle = styled.div`
     border-style: solid;
     transform: translateX(30%);
   }
+`;
+
+const IFrameWrapper = styled.div`
+  display: var(--display);
 `;
 
 const Captain = styled.figcaption`

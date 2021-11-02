@@ -10,5 +10,5 @@ I recreate some real website pages picked by [Frontend Practice](https://fronten
 - [ ] Sticky subheader fade out as scrolling;
 - [ ] Responsive for different screen sizes;
 - [ ] CSS Grid usage check (LearnWithJason video, scrimba course);
-- [ ] The video section;
+- [x] The video section;
 - [ ] The "More" dropdown on header;
