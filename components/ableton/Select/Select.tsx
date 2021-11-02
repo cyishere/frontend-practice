@@ -18,7 +18,6 @@ const Select: React.FC<SelectProps> = ({
   width,
 }) => {
   const displayedValue = getDisplayedValue(value, children);
-  console.log(displayedValue);
 
   return (
     <Wrapper>
@@ -70,7 +69,7 @@ const PresentationalBit = styled.div`
 
 const IconWrapper = styled.div`
   position: absolute;
-  top: 0;
+  top: -7px;
   right: 12px;
   bottom: 0;
   width: 10px;

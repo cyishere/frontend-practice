@@ -9,6 +9,7 @@ import SocialIconGroup from "../SocialIconGroup";
 import Paragraph from "../Paragraph";
 import { Logo } from "../Assets";
 import Select from "../Select";
+import TextInput from "../TextInput/TextInput";
 import { FOOTER_LIST_LINKS, LANGUAGES, LOCATIONS } from "data/ableton";
 
 const Footer: React.FC = () => {
@@ -43,6 +44,14 @@ const Footer: React.FC = () => {
             Enter your email address to stay up to date with the latest offers,
             tutorials, downloads, surveys and more.
           </Paragraph>
+
+          <TextInputWrapper>
+            <TextInput
+              label="Sign up newsletter"
+              buttonText="Sign up"
+              placeholder="Email Address"
+            />
+          </TextInputWrapper>
         </Column>
       </Grid>
 
@@ -60,7 +69,7 @@ const Footer: React.FC = () => {
         <Column>
           <HeadingThree>Language and Location</HeadingThree>
 
-          <FlexLeft>
+          <SelectWrapper>
             <Select
               label="Choose a language"
               value={language}
@@ -86,7 +95,7 @@ const Footer: React.FC = () => {
                 </option>
               ))}
             </Select>
-          </FlexLeft>
+          </SelectWrapper>
         </Column>
       </Grid>
 
@@ -137,10 +146,15 @@ const Grid = styled.div`
 
 const Column = styled.div``;
 
-const FlexLeft = styled.div`
+const TextInputWrapper = styled.div`
+  margin-top: 1em;
+`;
+
+const SelectWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
+  margin-top: 0.75em;
 `;
 
 const FlexBetween = styled.div`
