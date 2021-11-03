@@ -25,9 +25,6 @@ const GlobalStyles = createGlobalStyle`
     /* font weights */
     --fw-normal: 400;
     --fw-bold: 700;
-
-    /* For the full page scroll effect */
-    scroll-snap-type: y mandatory;
   }
 
   /* ================== */

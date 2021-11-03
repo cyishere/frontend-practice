@@ -25,6 +25,14 @@ const Home: NextPage = () => {
 const Wrapper = styled.main`
   width: 100%;
   /* background-color: var(--bg-color); */
+
+  /*
+    With the settings below,
+    the scroll snapping effect works.
+  */
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
 `;
 
 export default Home;
