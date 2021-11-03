@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Layout from "@/components/backstagetalks/Layout";
 import Header from "@/components/backstagetalks/Header";
+import TableOfContent from "@/components/backstagetalks/TableOfContent";
 import Footer from "@/components/backstagetalks/Footer";
 import IssueScreen from "@/components/backstagetalks/IssueScreen";
 import { ISSUES } from "data/backstagetalks";
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Header />
+      <TableOfContent />
       <Wrapper>
         {ISSUES.map((issue) => (
           <IssueScreen issue={issue} key={issue.title} />

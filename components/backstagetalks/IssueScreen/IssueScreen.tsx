@@ -10,7 +10,10 @@ interface IssueScreenProps {
 
 const IssueScreen: React.FC<IssueScreenProps> = ({ issue }) => {
   return (
-    <Wrapper style={{ "--bg-color": issue.color } as CSSProperties}>
+    <Wrapper
+      id={`issue${issue.title.slice(-1)}`}
+      style={{ "--bg-color": issue.color } as CSSProperties}
+    >
       <IssueInfo>
         <CoverWrapper>
           <Image
@@ -42,19 +45,21 @@ const Wrapper = styled.section`
   background-color: var(--bg-color);
   width: 100%;
   height: 100vh;
-  display: grid;
-  place-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   scroll-snap-align: start;
 `;
 
 const IssueInfo = styled.div`
-  width: 420px;
+  max-width: 420px;
+  width: 100%;
 `;
 
 const CoverWrapper = styled.div`
-  max-width: 420px;
-  max-height: 532px;
+  width: 100%;
+  height: auto;
 `;
 
 const Title = styled.h2`

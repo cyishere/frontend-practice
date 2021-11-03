@@ -1,4 +1,5 @@
 export interface IssueType {
+  id: number;
   cover: string;
   title: string;
   link: string;

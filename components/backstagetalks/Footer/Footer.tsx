@@ -41,6 +41,7 @@ const Wrapper = styled.footer`
 const Description = styled.p`
   font-size: var(--fs-base);
   font-weight: var(--fw-bold);
+  margin-bottom: 0.5em;
 `;
 
 const Copyright = styled.p`

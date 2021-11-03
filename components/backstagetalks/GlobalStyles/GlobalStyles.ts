@@ -25,6 +25,11 @@ const GlobalStyles = createGlobalStyle`
     /* font weights */
     --fw-normal: 400;
     --fw-bold: 700;
+
+    /* Official styles (Firefox) */
+    scrollbar-color: hsl(0deg 0% 0% / 0) hsl(0deg 0% 0% / 0);
+    scrollbar-width: none;
+    -ms-overflow-style: none; /* For IE */
   }
 
   /* ================== */
@@ -36,6 +41,16 @@ const GlobalStyles = createGlobalStyle`
     color: var(--clr-black);
   }
 
+  /* Vendor prefix for other browsers */
+  ::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
+
   a {
     color: var(--clr-black);
     text-decoration: none;
@@ -43,6 +58,12 @@ const GlobalStyles = createGlobalStyle`
 
   a:hover {
     text-decoration: revert;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 `;
 
