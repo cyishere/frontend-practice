@@ -26,9 +26,12 @@ const Wrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: transparent;
   padding: 20px 16px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
 `;
 
 const Logo = styled.div`

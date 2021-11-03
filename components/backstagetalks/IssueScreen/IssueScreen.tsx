@@ -1,3 +1,4 @@
+import { CSSProperties } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
@@ -9,7 +10,7 @@ interface IssueScreenProps {
 
 const IssueScreen: React.FC<IssueScreenProps> = ({ issue }) => {
   return (
-    <Wrapper>
+    <Wrapper style={{ "--bg-color": issue.color } as CSSProperties}>
       <IssueInfo>
         <CoverWrapper>
           <Image
@@ -38,11 +39,13 @@ const IssueScreen: React.FC<IssueScreenProps> = ({ issue }) => {
 
 const Wrapper = styled.section`
   font-weight: var(--fw-bold);
+  background-color: var(--bg-color);
   width: 100%;
   height: 100vh;
   display: grid;
   place-content: center;
   text-align: center;
+  scroll-snap-align: start;
 `;
 
 const IssueInfo = styled.div`
@@ -54,11 +57,14 @@ const CoverWrapper = styled.div`
   max-height: 532px;
 `;
 
-const Title = styled.h2``;
+const Title = styled.h2`
+  margin-bottom: 18px;
+`;
 
 const BuyLinkWrapper = styled.p`
   font-size: var(--fs-base);
   text-transform: uppercase;
+  margin-bottom: 18px;
 `;
 
 const StoreWrapper = styled.p`

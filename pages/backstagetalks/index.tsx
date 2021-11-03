@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+// import { CSSProperties } from "react";
 import styled from "styled-components";
 
 import Layout from "@/components/backstagetalks/Layout";
@@ -21,6 +22,9 @@ const Home: NextPage = () => {
   );
 };
 
-const Wrapper = styled.main``;
+const Wrapper = styled.main`
+  width: 100%;
+  /* background-color: var(--bg-color); */
+`;
 
 export default Home;
