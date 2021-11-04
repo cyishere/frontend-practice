@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
@@ -10,53 +9,36 @@ interface IssueScreenProps {
 
 const IssueScreen: React.FC<IssueScreenProps> = ({ issue }) => {
   return (
-    <Wrapper
-      id={`issue${issue.title.slice(-1)}`}
-      style={{ "--bg-color": issue.color } as CSSProperties}
-    >
-      <IssueInfo>
-        <CoverWrapper>
-          <Image
-            src={issue.cover}
-            alt={issue.title + "cover"}
-            width={840}
-            height={1064}
-            layout="responsive"
-            priority={issue.id === 1 ? true : undefined}
-          />
-        </CoverWrapper>
-        <Title>
-          {issue.title}
-          {issue.soldOut ? " is sold out." : ""}
-        </Title>
-        <BuyLinkWrapper>
-          <Link href={issue.link}>buy here</Link>
-        </BuyLinkWrapper>
-        <StoreWrapper>
-          or in{" "}
-          <Link href="http://backstagetalks.com/stocklist.php">
-            selected stores
-          </Link>
-          .
-        </StoreWrapper>
-      </IssueInfo>
+    <Wrapper>
+      <CoverWrapper>
+        <Image
+          src={issue.cover}
+          alt={issue.title + "cover"}
+          width={840}
+          height={1064}
+          layout="responsive"
+          priority={issue.id === 1 ? true : undefined}
+        />
+      </CoverWrapper>
+      <Title>
+        {issue.title}
+        {issue.soldOut ? " is sold out." : ""}
+      </Title>
+      <BuyLinkWrapper>
+        <Link href={issue.link}>buy here</Link>
+      </BuyLinkWrapper>
+      <StoreWrapper>
+        or in{" "}
+        <Link href="http://backstagetalks.com/stocklist.php">
+          selected stores
+        </Link>
+        .
+      </StoreWrapper>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.section`
-  font-weight: var(--fw-bold);
-  /* background-color: var(--bg-color); */
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  scroll-snap-align: start;
-`;
-
-const IssueInfo = styled.div`
+const Wrapper = styled.div`
   max-width: 420px;
   width: 100%;
 `;

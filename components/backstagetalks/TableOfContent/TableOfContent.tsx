@@ -2,12 +2,27 @@ import styled from "styled-components";
 
 import { ISSUES } from "data/backstagetalks";
 import { QUERIES } from "../constants";
+import { CSSProperties } from "react";
 
-const TableOfContent: React.FC = () => {
+interface TableOfContentProps {
+  index: number;
+}
+
+const TableOfContent: React.FC<TableOfContentProps> = ({ index }) => {
+  console.log("index:", index);
+
   return (
     <Wrapper>
-      {ISSUES.map((issue) => (
-        <BookMarker key={issue.id} href={`#issue${issue.title.slice(-1)}`}>
+      {ISSUES.map((issue, i) => (
+        <BookMarker
+          key={issue.id}
+          href={`#issue${issue.title.slice(-1)}`}
+          style={
+            {
+              "--fontWeight": i === index ? "700" : "400",
+            } as CSSProperties
+          }
+        >
           {issue.title}
         </BookMarker>
       ))}
@@ -23,12 +38,14 @@ const Wrapper = styled.aside`
     position: fixed;
     right: 20px;
     bottom: 20px;
+    z-index: 9999;
   }
 `;
 
 const BookMarker = styled.a`
   display: block;
   font-size: var(--fs-base);
+  font-weight: var(--fontWeight);
   line-height: 1.6;
 `;
 

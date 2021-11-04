@@ -25,12 +25,6 @@ const GlobalStyles = createGlobalStyle`
     /* font weights */
     --fw-normal: 400;
     --fw-bold: 700;
-
-    /* Official styles (Firefox) */
-    scrollbar-color: hsl(0deg 0% 0% / 0) hsl(0deg 0% 0% / 0);
-    scrollbar-width: none;
-    /* For IE */
-    -ms-overflow-style: none;
   }
 
   /* ================== */
@@ -41,16 +35,6 @@ const GlobalStyles = createGlobalStyle`
     font-weight: var(--fw-normal);
     color: var(--clr-black);
   }
-
-  /* Vendor prefix for other browsers */
-  ::-webkit-scrollbar {
-    width: 0;
-    background-color: transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: transparent;
-  }
-  
 
   a {
     color: var(--clr-black);
