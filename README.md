@@ -17,5 +17,7 @@ I recreate some real website pages picked by [Frontend Practice](https://fronten
 
 ### To-Dos
 
-- [ ] Change background color while scrolling with snapping;
-- [ ] Hide scrollbar across all browsers;
+- [x] Change background color while scrolling with snapping;
+- [x] Hide scrollbar across all browsers;
+
+❗ **NOTES**: Used the React version of [fullpage.js](https://alvarotrigo.com/fullPage/) to make the scroll-snapping and no scrollbar work.
