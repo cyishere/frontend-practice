@@ -1,3 +1,8 @@
+/**
+ * This is the type declaration for fullpage.js.
+ * Via: https://github.com/alvarotrigo/react-fullpage/issues/163
+ */
+
 declare module "@fullpage/react-fullpage" {
   export interface fullpageOptions {
     anchors?: string[];
