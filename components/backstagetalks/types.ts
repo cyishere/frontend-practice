@@ -4,4 +4,5 @@ export interface IssueType {
   title: string;
   link: string;
   color: string;
+  soldOut: boolean;
 }

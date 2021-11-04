@@ -7,6 +7,7 @@ export const ISSUES: IssueType[] = [
     title: "Issue #5",
     link: "https://www.bruil.info/product/backstage-talks-5/",
     color: "#00c1b5",
+    soldOut: false,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const ISSUES: IssueType[] = [
     title: "Issue #4",
     link: "https://www.bruil.info/product/backstage-talks-4/",
     color: "#ff651a",
+    soldOut: false,
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ export const ISSUES: IssueType[] = [
     title: "Issue #3",
     link: "https://www.bruil.info/product/backstage-talks-3/",
     color: "#ffbe00",
+    soldOut: false,
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ export const ISSUES: IssueType[] = [
     title: "Issue #2",
     link: "https://www.bruil.info/product/backstage-talks-2/",
     color: "#1d3fbb",
+    soldOut: false,
   },
   {
     id: 5,
@@ -35,5 +39,6 @@ export const ISSUES: IssueType[] = [
     title: "Issue #1",
     link: "https://www.bruil.info/product/backstage-talks-1/",
     color: "#e30512",
+    soldOut: true,
   },
 ];

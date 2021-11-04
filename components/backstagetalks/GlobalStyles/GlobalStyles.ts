@@ -29,7 +29,8 @@ const GlobalStyles = createGlobalStyle`
     /* Official styles (Firefox) */
     scrollbar-color: hsl(0deg 0% 0% / 0) hsl(0deg 0% 0% / 0);
     scrollbar-width: none;
-    -ms-overflow-style: none; /* For IE */
+    /* For IE */
+    -ms-overflow-style: none;
   }
 
   /* ================== */

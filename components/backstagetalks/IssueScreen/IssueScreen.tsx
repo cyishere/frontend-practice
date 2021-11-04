@@ -22,9 +22,13 @@ const IssueScreen: React.FC<IssueScreenProps> = ({ issue }) => {
             width={840}
             height={1064}
             layout="responsive"
+            priority={issue.id === 1 ? true : undefined}
           />
         </CoverWrapper>
-        <Title>{issue.title}</Title>
+        <Title>
+          {issue.title}
+          {issue.soldOut ? " is sold out." : ""}
+        </Title>
         <BuyLinkWrapper>
           <Link href={issue.link}>buy here</Link>
         </BuyLinkWrapper>
@@ -42,7 +46,7 @@ const IssueScreen: React.FC<IssueScreenProps> = ({ issue }) => {
 
 const Wrapper = styled.section`
   font-weight: var(--fw-bold);
-  background-color: var(--bg-color);
+  /* background-color: var(--bg-color); */
   width: 100%;
   height: 100vh;
   display: flex;
