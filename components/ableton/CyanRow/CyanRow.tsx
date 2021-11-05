@@ -46,12 +46,8 @@ const Wrapper = styled.section`
   &::before {
     content: "";
     background-color: var(--clr-light-cyan);
-    width: ${8 * 8.33}rem;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
+    grid-column: 1 / 8;
+    grid-row: 1 / -1;
   }
 `;
 

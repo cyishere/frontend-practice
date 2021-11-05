@@ -36,14 +36,9 @@ const Wrapper = styled.section`
 
   &::before {
     content: "";
-    width: ${8 * 8.33}rem;
-    height: 100%;
     background-color: var(--clr-light-purple);
-    position: absolute;
-    top: 0;
-    right: ${2 * 8.33}rem;
-    bottom: 0;
-    left: ${2 * 8.33}rem;
+    grid-column: 3 / -3;
+    grid-row: 1 / -1;
   }
 `;
 

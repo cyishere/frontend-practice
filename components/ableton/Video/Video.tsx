@@ -4,13 +4,14 @@ import Image from "next/image";
 import Iframe from "react-iframe";
 
 import { Grid } from "../Grid";
+import { QUERIES } from "../constants";
 
 const Video: React.FC = () => {
   const [showVideo, setShowVideo] = useState(false);
 
   return (
     <Grid>
-      <Wrapper style={{ "--height": "442px" } as CSSProperties}>
+      <Wrapper>
         <VideoWrapper
           style={{ "--display": showVideo ? "none" : "block" } as CSSProperties}
           onClick={() => setShowVideo(!showVideo)}
@@ -45,7 +46,15 @@ const Video: React.FC = () => {
 const Wrapper = styled.figure`
   grid-column: 4 / 10;
   position: relative;
-  height: var(--height);
+  height: auto;
+
+  @media ${QUERIES.underLarge} {
+    grid-column: 3 / -3;
+  }
+
+  @media ${QUERIES.tabletAndSmaller} {
+    grid-column: 2 / -2;
+  }
 `;
 
 const VideoWrapper = styled.div`

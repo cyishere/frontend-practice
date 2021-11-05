@@ -17,6 +17,7 @@ import PurpleRow from "@/components/ableton/PurpleRow";
 import BlueRow from "@/components/ableton/BlueRow";
 import Footer from "@/components/ableton/Footer";
 import Video from "@/components/ableton/Video";
+import { QUERIES } from "@/components/ableton/constants";
 
 const Home: NextPage = () => {
   return (
@@ -181,6 +182,16 @@ const HeroTextWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  & svg {
+    width: 100%;
+    height: auto;
+  }
+
+  @media ${QUERIES.tabletAndSmaller} {
+    width: 215px;
+    height: 52px;
+  }
 `;
 
 export default Home;

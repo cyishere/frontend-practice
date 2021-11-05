@@ -38,12 +38,8 @@ const Wrapper = styled.section`
   &::before {
     content: "";
     background-color: var(--clr-light-yellow);
-    width: ${7 * 8.33}rem;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    grid-column: 6 / -1;
+    grid-row: 1 / -1;
   }
 `;
 
