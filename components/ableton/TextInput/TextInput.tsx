@@ -46,6 +46,7 @@ const Button = styled.button`
   font-family: var(--ff-primary);
   font-size: ${20 / 16}rem;
   font-weight: var(--fw-normal);
+  white-space: nowrap;
   color: var(--clr-white);
   background-color: var(--clr-light-blue);
   padding: 8px 30px;

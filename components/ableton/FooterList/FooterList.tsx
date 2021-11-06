@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { ChevronRight } from "react-feather";
+import { QUERIES } from "../constants";
 
 interface FooterListProps {
   items: string[];
@@ -29,6 +30,11 @@ const ListItem = styled.li`
   font-size: ${20 / 16}rem;
   font-weight: var(--fw-light);
   line-height: 1.5;
+  white-space: nowrap;
+
+  @media ${QUERIES.underLarge} {
+    font-size: ${16 / 16}rem;
+  }
 `;
 
 const ListLink = styled.a`

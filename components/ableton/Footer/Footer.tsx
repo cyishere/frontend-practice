@@ -3,13 +3,14 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 
+import { QUERIES } from "../constants";
 import FooterList from "../FooterList";
 import { HeadingThree } from "../Headings";
 import SocialIconGroup from "../SocialIconGroup";
 import Paragraph from "../Paragraph";
 import { Logo } from "../Assets";
 import Select from "../Select";
-import TextInput from "../TextInput/TextInput";
+import TextInput from "../TextInput";
 import { FOOTER_LIST_LINKS, LANGUAGES, LOCATIONS } from "data/ableton";
 
 const Footer: React.FC = () => {
@@ -27,18 +28,18 @@ const Footer: React.FC = () => {
         />
       </LogoRow>
 
-      <Grid>
-        <Column>
+      <GridWithArea>
+        <PrimaryColumn>
           <FooterList items={FOOTER_LIST_LINKS.main} />
           <SocialIconGroup />
-        </Column>
+        </PrimaryColumn>
 
-        <Column>
+        <EducationColumn>
           <HeadingThree>Education</HeadingThree>
           <FooterList items={FOOTER_LIST_LINKS.education} />
-        </Column>
+        </EducationColumn>
 
-        <Column>
+        <NewsletterColumn>
           <HeadingThree>Sign up to our newsletter</HeadingThree>
           <Paragraph>
             Enter your email address to stay up to date with the latest offers,
@@ -52,8 +53,8 @@ const Footer: React.FC = () => {
               placeholder="Email Address"
             />
           </TextInputWrapper>
-        </Column>
-      </Grid>
+        </NewsletterColumn>
+      </GridWithArea>
 
       <Grid>
         <Column>
@@ -99,8 +100,8 @@ const Footer: React.FC = () => {
         </Column>
       </Grid>
 
-      <FlexBetween>
-        <FlexColumn>
+      <Flex>
+        <FlexItem>
           <Link href="/ableton" passHref>
             <SubLink>Contact Us</SubLink>
           </Link>
@@ -119,18 +120,18 @@ const Footer: React.FC = () => {
           <Link href="/ableton" passHref>
             <SubLink>Imprint</SubLink>
           </Link>
-        </FlexColumn>
-        <FlexColumn>
+        </FlexItem>
+        <FlexItem>
           <SubLink as="span">Made in Berlin</SubLink>
           <Logo />
-        </FlexColumn>
-      </FlexBetween>
+        </FlexItem>
+      </Flex>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.footer`
-  padding: 8.33rem;
+  padding: 8.33vw;
   border-top: 5px solid var(--clr-light-gray);
 `;
 const LogoRow = styled.div`
@@ -142,9 +143,36 @@ const Grid = styled.div`
   grid-template-columns: 2fr 2fr 3fr;
   gap: 3rem;
   margin-bottom: 5rem;
+
+  @media ${QUERIES.desktopAndSmaller} {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const GridWithArea = styled(Grid)`
+  grid-template-areas: "primaryList educationList newsletter";
+
+  @media ${QUERIES.desktopAndSmaller} {
+    grid-template-areas:
+      "newsletter"
+      "primaryList"
+      "educationList";
+  }
 `;
 
 const Column = styled.div``;
+
+const PrimaryColumn = styled(Column)`
+  grid-area: primaryList;
+`;
+
+const EducationColumn = styled(Column)`
+  grid-area: educationList;
+`;
+
+const NewsletterColumn = styled(Column)`
+  grid-area: newsletter;
+`;
 
 const TextInputWrapper = styled.div`
   margin-top: 1em;
@@ -157,16 +185,29 @@ const SelectWrapper = styled.div`
   margin-top: 0.75em;
 `;
 
-const FlexBetween = styled.div`
+const Flex = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 3rem;
+
+  @media ${QUERIES.desktopAndSmaller} {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
-const FlexColumn = styled.div`
+const FlexItem = styled.div`
   display: flex;
-  gap: 1rem;
   align-items: center;
+  gap: 1rem;
+
+  @media ${QUERIES.desktopAndSmaller} {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
 const SubLink = styled.a`
