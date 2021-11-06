@@ -10,7 +10,7 @@ I recreate some real website pages picked by [Frontend Practice](https://fronten
 - [ ] Sticky subheader fade out as scrolling;
 - [x] Responsive for different screen sizes;
 - [ ] Responsive Header;
-- [ ] Responsive Footer;
+- [x] Responsive Footer;
 - [x] CSS Grid usage check (LearnWithJason video, scrimba course);
 - [x] The video section;
 - [ ] The "More" dropdown on header;
