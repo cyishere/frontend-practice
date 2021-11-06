@@ -13,13 +13,12 @@ const BlueRow: React.FC = () => {
         <Image
           src="/images/ableton/photo-8.jpeg"
           alt=""
-          width={655}
-          height={655}
-          layout="responsive"
+          layout="fill"
+          objectFit="cover"
         />
       </Left>
       <Right>
-        <HeadingOne>
+        <TrimedHeadingOne>
           We’re really proud of the work we’ve done so far. But there’s so much
           more to come. If you’d like to be a part of it, please join us.
           <Link href="/ableton" passHref>
@@ -30,7 +29,7 @@ const BlueRow: React.FC = () => {
               </IconWrapper>
             </Blocker>
           </Link>
-        </HeadingOne>
+        </TrimedHeadingOne>
       </Right>
     </Wrapper>
   );
@@ -47,11 +46,26 @@ const Wrapper = styled.section`
   }
 `;
 
-const Left = styled.div``;
+const Left = styled.div`
+  height: ${4 * 8.33}vw;
+  position: relative;
+`;
 
 const Right = styled.div`
   background-color: var(--clr-lighter-blue);
-  padding: 8.33vw;
+  padding: 1rem 8.33vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media ${QUERIES.underLarge} {
+    padding-top: 8.33vw;
+    padding-bottom: 8.33vw;
+  }
+`;
+
+const TrimedHeadingOne = styled(HeadingOne)`
+  margin: 0;
 `;
 
 const Blocker = styled.a`

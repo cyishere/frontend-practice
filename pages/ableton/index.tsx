@@ -31,9 +31,8 @@ const Home: NextPage = () => {
             <Image
               src="/images/ableton/hero-image.jpeg"
               alt=""
-              width={1310}
-              height={805}
-              layout="responsive"
+              layout="fill"
+              objectFit="cover"
             />
             <HeroTextWrapper>
               <Ableton />
@@ -119,9 +118,8 @@ const Home: NextPage = () => {
             <Image
               src="/images/ableton/poster-meet-the-makers.jpeg"
               alt=""
-              width={1310}
-              height={737}
-              layout="responsive"
+              layout="fill"
+              objectFit="cover"
             />
           </BigPictureColumn>
 

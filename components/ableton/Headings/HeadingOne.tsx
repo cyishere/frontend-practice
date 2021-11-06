@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { QUERIES } from "../constants";
 
-const HeadingOne: React.FC = ({ children }) => <Wrapper>{children}</Wrapper>;
-
-const Wrapper = styled.h1`
+const HeadingOne = styled.h1`
   font-size: ${30 / 16}rem;
   font-weight: var(--fw-bold);
   line-height: 1.4;

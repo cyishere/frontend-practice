@@ -11,6 +11,9 @@ const BigPictureColumn: React.FC = ({ children }) => {
 
 const Container = styled.section`
   grid-column: 2 / 12;
+  position: relative;
+  width: 100%;
+  height: 805px;
 `;
 
 export default BigPictureColumn;
