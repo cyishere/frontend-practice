@@ -9,7 +9,7 @@ I recreate some real website pages picked by [Frontend Practice](https://fronten
 - [x] Footer;
 - [ ] Sticky subheader fade out as scrolling;
 - [x] Responsive for different screen sizes;
-- [ ] Responsive Header;
+- [x] Responsive Header;
 - [x] Responsive Footer;
 - [x] CSS Grid usage check (LearnWithJason video, scrimba course);
 - [x] The video section;
