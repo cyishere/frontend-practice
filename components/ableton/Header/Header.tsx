@@ -1,81 +1,53 @@
+import { CSSProperties, useState } from "react";
 import styled from "styled-components";
-import Link from "next/link";
-import { Plus } from "react-feather";
 
-import { Logo } from "../Assets";
-import { PrimaryNavLink, SecondaryNavLink } from "../NavLink";
+import { MainList, SubList } from "../NavLink";
 import Flex from "../Flex";
+import { QUERIES } from "../constants";
+import MobileNav from "./MobileNav";
+import PrimaryLogo from "../PrimaryLogo";
+import MenuButton from "../MenuButton";
 
-interface HeaderProps {}
+const Header: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(true);
 
-const Header: React.FC<HeaderProps> = () => {
+  const stateColor = isMobile ? "white" : "black";
+  const stateRotate = isMobile ? "rotate(180deg)" : "rotate(0deg)";
+
+  const toggleMobileMode = () => setIsMobile(!isMobile);
+
+  if (isMobile) {
+    return (
+      <MobileNav
+        isOpen={isMobile}
+        onDismiss={toggleMobileMode}
+        stateColor={stateColor}
+        stateRotate={stateRotate}
+      />
+    );
+  }
+
   return (
     <Wrapper>
       <MainNavWrapper>
-        <Link href="/" passHref>
-          <LogoWrapper>
-            <Logo />
-          </LogoWrapper>
-        </Link>
+        <PrimaryLogo stateColor={stateColor} />
 
         <nav>
-          <MainList as="ul">
-            <li>
-              <Link href="/ableton" passHref>
-                <PrimaryNavLink>Live</PrimaryNavLink>
-              </Link>
-            </li>
-            <li>
-              <Link href="/ableton" passHref>
-                <PrimaryNavLink>Push</PrimaryNavLink>
-              </Link>
-            </li>
-            <li>
-              <Link href="/ableton" passHref>
-                <PrimaryNavLink>Link</PrimaryNavLink>
-              </Link>
-            </li>
-            <li>
-              <Link href="/ableton" passHref>
-                <PrimaryNavLink>Shop</PrimaryNavLink>
-              </Link>
-            </li>
-            <li>
-              <Link href="/ableton" passHref>
-                <PrimaryNavLink>Packs</PrimaryNavLink>
-              </Link>
-            </li>
-            <li>
-              <Link href="/ableton" passHref>
-                <PrimaryNavLink>Help</PrimaryNavLink>
-              </Link>
-            </li>
-            <li>
-              <Link href="/ableton" passHref>
-                <PrimaryNavLinkSpecial>
-                  More
-                  <IconWrapper>
-                    <Plus />
-                  </IconWrapper>
-                </PrimaryNavLinkSpecial>
-              </Link>
-            </li>
-          </MainList>
+          <MainListWrapper as="ul">
+            <MainList />
+          </MainListWrapper>
+
+          <MenuButton
+            stateColor={stateColor}
+            stateRotate={stateRotate}
+            toggleMobileMode={toggleMobileMode}
+          />
         </nav>
       </MainNavWrapper>
 
-      <SubList as="ul">
-        <li>
-          <Link href="/ableton" passHref>
-            <PrimaryNavLinkCallout>Try live for free</PrimaryNavLinkCallout>
-          </Link>
-        </li>
-        <li>
-          <Link href="/ableton" passHref>
-            <SecondaryNavLink>Log in or register</SecondaryNavLink>
-          </Link>
-        </li>
-      </SubList>
+      <SubListWrapper as="ul">
+        <SubList />
+      </SubListWrapper>
     </Wrapper>
   );
 };
@@ -90,37 +62,23 @@ const Wrapper = styled.header`
 
 const MainNavWrapper = styled(Flex)`
   --gap: 40px;
+  align-items: center;
 `;
 
-const LogoWrapper = styled.a`
-  svg {
-    width: 60px;
-    height: 28px;
+const MainListWrapper = styled(Flex)`
+  --gap: 44px;
+
+  @media ${QUERIES.desktopAndSmaller} {
+    display: none;
   }
 `;
 
-const MainList = styled(Flex)`
-  --gap: 44px;
-`;
-
-const SubList = styled(Flex)`
+const SubListWrapper = styled(Flex)`
   --gap: 32px;
-`;
 
-const PrimaryNavLinkSpecial = styled(PrimaryNavLink)`
-  color: var(--clr-orange);
-  padding-right: 2rem;
-  position: relative;
-`;
-
-const IconWrapper = styled.span`
-  position: absolute;
-  top: -3px;
-  right: 0;
-`;
-
-const PrimaryNavLinkCallout = styled(PrimaryNavLink)`
-  color: var(--clr-blue);
+  @media ${QUERIES.desktopAndSmaller} {
+    display: none;
+  }
 `;
 
 export default Header;

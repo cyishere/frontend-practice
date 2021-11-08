@@ -47,6 +47,19 @@ const GlobalStyles = createGlobalStyle`
     --fw-bold: 700;
   }
 
+  /* ================== */
+  /* Global Styles  */
+  /* ================== */
+
+  #__next {
+    /*
+      Create a stacking context, without a z-index.
+      This ensures that all portal content (modals and tooltips) will
+      float above the app.
+    */
+    isolation: isolate;
+  }
+
   body {
     font-family: var(--ff-primary);
     background-color: var(--clr-light-gray);

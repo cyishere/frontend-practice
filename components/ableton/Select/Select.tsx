@@ -1,6 +1,6 @@
 import React, { CSSProperties } from "react";
 import styled from "styled-components";
-import { SmallArrowDown } from "../Assets";
+import { SmallArrow } from "../Assets";
 import { getDisplayedValue } from "./Select.helpers";
 
 interface SelectProps {
@@ -29,7 +29,7 @@ const Select: React.FC<SelectProps> = ({
       >
         {displayedValue}
         <IconWrapper>
-          <SmallArrowDown />
+          <SmallArrow />
         </IconWrapper>
       </PresentationalBit>
     </Wrapper>
