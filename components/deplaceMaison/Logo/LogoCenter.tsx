@@ -23,6 +23,7 @@ const Wrapper = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5vw;
 `;
 
 const LogoContainer = styled.span`
