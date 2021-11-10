@@ -42,6 +42,20 @@ const Hero: React.FC<HeroProps> = () => {
             </Album>
           ))}
         </AlbumWrapper>
+        <Foot>
+          <Link href="/deplace-maison" passHref>
+            <Explore>
+              Explore
+              <IconWrapper>
+                <IconCircle
+                  src="/images/deplace-maison/circle-container.svg"
+                  alt=""
+                />
+                <IconArrow src="/images/deplace-maison/arrow.svg" alt="" />
+              </IconWrapper>
+            </Explore>
+          </Link>
+        </Foot>
       </Section>
     </Wrapper>
   );
@@ -50,7 +64,7 @@ const Hero: React.FC<HeroProps> = () => {
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 20vw 1fr 10vw;
-  margin-bottom: 18.75vw;
+  margin-bottom: 10vw;
 `;
 
 const Section = styled.section`
@@ -79,6 +93,7 @@ const AlbumWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0 35px;
+  margin-bottom: 4vw;
 `;
 
 const Album = styled.div``;
@@ -103,5 +118,43 @@ const Num = styled.span`
 `;
 
 const Name = styled.h2``;
+
+const Foot = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+const Explore = styled.a`
+  font-size: 1.5vw;
+  line-height: 1;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+`;
+
+const IconWrapper = styled.div`
+  width: 5vw;
+  height: 5vw;
+  position: relative;
+`;
+
+const IconCircle = styled.img`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+`;
+
+const IconArrow = styled.img`
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 export default Hero;
