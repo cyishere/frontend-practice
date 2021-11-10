@@ -38,7 +38,9 @@ const Home: NextPage = () => {
               <Link href="/backstagetalks">Backstage Talks</Link>
             </ListItem>
             <ListItem>Monstercat</ListItem>
-            <ListItem>Déplacé Maison</ListItem>
+            <ListItem>
+              <Link href="/deplace-maison">Déplacé Maison</Link>
+            </ListItem>
           </List>
         </Main>
         <Footer>
