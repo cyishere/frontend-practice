@@ -41,6 +41,7 @@ const Hero: React.FC<HeroProps> = () => {
               </Info>
             </Album>
           ))}
+          <Decorator src="/images/deplace-maison/scotch-tape.svg" alt="" />
         </AlbumWrapper>
         <Foot>
           <Link href="/deplace-maison" passHref>
@@ -94,6 +95,7 @@ const AlbumWrapper = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 0 35px;
   margin-bottom: 4vw;
+  position: relative;
 `;
 
 const Album = styled.div``;
@@ -118,6 +120,16 @@ const Num = styled.span`
 `;
 
 const Name = styled.h2``;
+
+const Decorator = styled.img`
+  width: 10vw;
+  height: auto;
+  opacity: 0.2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -51%);
+`;
 
 const Foot = styled.div`
   display: flex;
