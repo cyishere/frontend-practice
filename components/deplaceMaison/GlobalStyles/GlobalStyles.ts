@@ -20,6 +20,9 @@ const GlobalStyles = createGlobalStyle`
     /* font weights */
     --fw-normal: 400;
     --fw-bold: 700;
+
+    /* custom cursor */
+    --cursor-size: 28px;
   }
 
   /* ================== */
