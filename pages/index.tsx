@@ -5,13 +5,15 @@ import Link from "next/link";
 
 import SEO from "@/components/SEO";
 import GlobalStyles from "@/styles/GlobalStyles";
+import Header from "@/components/Header";
 
 const Home: NextPage = () => {
   return (
     <Fragment>
       <SEO title="Home" pathname="/" />
+      <Header />
       <Wrapper>
-        <Header>
+        <HeaderWrapper>
           <PageHeading>Projects of Frontend Practice</PageHeading>
           <p>
             Become a better frontend developer by recreating{" "}
@@ -28,7 +30,7 @@ const Home: NextPage = () => {
             </a>
             .
           </p>
-        </Header>
+        </HeaderWrapper>
         <Main>
           <List>
             <ListItem>
@@ -66,7 +68,7 @@ const Wrapper = styled.div`
   line-height: 1.5;
 `;
 
-const Header = styled.header`
+const HeaderWrapper = styled.header`
   margin-bottom: 3rem;
   text-align: center;
 `;
