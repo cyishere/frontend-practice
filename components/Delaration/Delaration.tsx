@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "next/link";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
-import { AlertOctagon, X } from "react-feather";
+import { AlertOctagon, X, ExternalLink } from "react-feather";
 
 import { COLORS, QUERIES } from "@/styles/constants";
 import UnstyledButton from "../UnstyledButton";
@@ -29,7 +29,10 @@ const DelarationIcon: React.FC<DelarationIconProps> = ({ text, href }) => {
             This is a clone version of the{" "}
             <Anchor href={href} target="_blank" rel="noreferrer">
               {text}
-            </Anchor>{" "}
+            </Anchor>
+            <ExternalIcon>
+              <ExternalLink size={18} />
+            </ExternalIcon>
             which I made for learning purpose. Go to{" "}
             <Link href="/" passHref>
               <Anchor>my project list</Anchor>
@@ -110,7 +113,7 @@ const Content = styled(DialogContent)`
   font-family: "Poppins", sans-serif;
   font-size: ${20 / 16}rem;
   line-height: 1.5;
-  width: 90%;
+  width: 70vw;
   background-color: var(--clr-white);
   padding: 3rem;
   border-radius: 1rem;
@@ -131,11 +134,16 @@ const Content = styled(DialogContent)`
 const Anchor = styled.a`
   color: var(--clr-pink);
   border-bottom: 2px solid currentColor;
-  /* padding: 1px; */
 
   &:hover {
     border-color: transparent;
   }
+`;
+
+const ExternalIcon = styled.span`
+  color: hsl(${COLORS.black} / 0.8);
+  margin-left: 4px;
+  margin-right: 4px;
 `;
 
 const CloseButton = styled(UnstyledButton)`

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 
-import { ProjectTypes } from "data/projects";
+import { ProjectTypes } from "@/data/projects";
 import { QUERIES } from "@/styles/constants";
 
 interface ProjectGridProps {
@@ -33,9 +33,6 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ project }) => {
         ) : null}
 
         <ButtonGroupWrapper>
-          <Origin href={project.origin} target="_blank" rel="noreferrer">
-            Original Website
-          </Origin>
           {project.demo.includes("http") ? (
             <Demo href={project.demo}>My Clone Demo</Demo>
           ) : (
@@ -43,6 +40,9 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ project }) => {
               <Demo>My Clone Demo</Demo>
             </Link>
           )}
+          <Origin href={project.origin} target="_blank" rel="noreferrer">
+            Original Website
+          </Origin>
         </ButtonGroupWrapper>
       </Content>
       <ScreenshotWrapper>
@@ -119,21 +119,22 @@ const ButtonGroupWrapper = styled.div`
 `;
 
 const ButtonStyle = styled.a`
-  display: block;
-  padding: 0.5rem 1rem;
+  text-align: center;
   border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  display: block;
 `;
 
 const Origin = styled(ButtonStyle)`
   color: var(--clr-black);
   border-color: var(--clr-black);
-  margin-bottom: 0.5rem;
 `;
 
 const Demo = styled(ButtonStyle)`
   color: var(--clr-white);
   border-color: var(--clr-orange);
   background-color: var(--clr-orange);
+  margin-bottom: 0.5rem;
 `;
 
 const ScreenshotWrapper = styled.div``;
