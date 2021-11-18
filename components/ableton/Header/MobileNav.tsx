@@ -1,7 +1,6 @@
 import styled, { keyframes } from "styled-components";
-import { DialogOverlay, DialogContent } from "@reach/dialog";
+import { DialogOverlay } from "@reach/dialog";
 
-import { QUERIES } from "../constants";
 import { MainList, SubList } from "../NavLink";
 import PrimaryLogo from "../PrimaryLogo";
 import MenuButton from "../MenuButton";
