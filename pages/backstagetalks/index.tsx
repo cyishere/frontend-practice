@@ -6,6 +6,7 @@ import Header from "@/components/backstagetalks/Header";
 import TableOfContent from "@/components/backstagetalks/TableOfContent";
 import Footer from "@/components/backstagetalks/Footer";
 import FullpageIssueScreen from "@/components/backstagetalks/FullpageIssueScreen";
+import Delaration from "@/components/Delaration";
 
 const Home: NextPage = () => {
   const [index, setIndex] = useState(0);
@@ -29,6 +30,10 @@ const Home: NextPage = () => {
       <TableOfContent index={index} />
       <FullpageIssueScreen onLeave={onLeave} afterLoad={afterLoad} />
       <Footer />
+      <Delaration
+        text="Backstage Talks magazine archive"
+        href="https://backstagetalks.com/"
+      />
     </Layout>
   );
 };

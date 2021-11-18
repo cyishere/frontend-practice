@@ -18,6 +18,7 @@ import BlueRow from "@/components/ableton/BlueRow";
 import Footer from "@/components/ableton/Footer";
 import Video from "@/components/ableton/Video";
 import { QUERIES } from "@/components/ableton/constants";
+import Delaration from "@/components/Delaration";
 
 const Home: NextPage = () => {
   return (
@@ -167,6 +168,7 @@ const Home: NextPage = () => {
 
         <Footer />
       </MaxWidthWrapper>
+      <Delaration text="Ableton about page" href="https://www.ableton.com" />
     </Layout>
   );
 };
