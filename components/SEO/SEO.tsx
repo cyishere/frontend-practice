@@ -7,7 +7,7 @@ interface Props {
 }
 
 const SEO: React.FC<Props> = ({ title, description, pathname }) => {
-  const domainUrl = "https://practice.cyishere.dev";
+  const domainUrl = "https://clones.cyishere.dev";
 
   const content = description
     ? description
