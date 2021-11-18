@@ -1,25 +1,28 @@
-# Projects of Frontend Practice
+# The Clone Webs
 
-I recreate some real website pages picked by [Frontend Practice](https://frontendpractice.com/).
+-- Projects of Frontend Practice
+
+I recreate some real website pages selected by [Frontend Practice](https://frontendpractice.com/).
 
 ## Ableton
 
+[Live Demo]()
+
+![Ableton screenshot](/public/images/ableton.png)
+
 ### To-Dos
 
-- [x] Footer;
 - [ ] Sticky subheader fade out as scrolling;
-- [x] Responsive for different screen sizes;
-- [x] Responsive Header;
-- [x] Responsive Footer;
-- [x] CSS Grid usage check (LearnWithJason video, scrimba course);
-- [x] The video section;
 - [ ] The "More" dropdown on header;
 
 ## Backstage Talks
 
+[Live Demo]()
+
+![Backstage Talks screenshot](/public/images/backstage-talks.png)
+
 ### To-Dos
 
-- [x] Change background color while scrolling with snapping;
-- [x] Hide scrollbar across all browsers;
+- [ ] Smoothly change background colors while scrolling;
 
 ❗ **NOTES**: Used the React version of [fullpage.js](https://alvarotrigo.com/fullPage/) to make the scroll-snapping and no scrollbar work.
