@@ -8,7 +8,7 @@ interface LayoutProps {}
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <Fragment>
-      <SEO title="Backstage Talks" pathname="/backstagetalks" />
+      <SEO title="Backstage Talks Clone" pathname="/backstagetalks" />
       {children}
       <GlobalStyles />
     </Fragment>
