@@ -28,6 +28,20 @@ const GlobalStyles = createGlobalStyle`
   a:hover {
     text-decoration: revert;
   }
+
+  #__next {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+
+    /*
+      Create a stacking context, without a z-index.
+      This ensures that all portal content (modals and tooltips) will
+      float above the app.
+    */
+    isolation: isolate;
+  }
 `;
 
 export default GlobalStyles;

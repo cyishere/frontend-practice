@@ -6,6 +6,7 @@ import Link from "next/link";
 import SEO from "@/components/SEO";
 import GlobalStyles from "@/styles/GlobalStyles";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -43,16 +44,8 @@ const Home: NextPage = () => {
             <ListItem>Déplacé Maison</ListItem>
           </List>
         </Main>
-        <Footer>
-          <p>
-            Made by{" "}
-            <a href="https://cyishere.dev" target="_blank" rel="noreferrer">
-              CY
-            </a>
-            .
-          </p>
-        </Footer>
       </Wrapper>
+      <Footer />
       <GlobalStyles />
     </Fragment>
   );
@@ -61,14 +54,14 @@ const Home: NextPage = () => {
 const Wrapper = styled.div`
   max-width: 960px;
   padding: 32px;
-  margin: auto;
+  margin: 0 auto;
   font-family: "Poppins", sans-serif;
   font-size: ${18 / 16}rem;
   font-weight: 400;
   line-height: 1.5;
 `;
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.section`
   margin-bottom: 3rem;
   text-align: center;
 `;
@@ -98,10 +91,6 @@ const ListItem = styled.li`
   &::marker {
     color: plum;
   }
-`;
-
-const Footer = styled.footer`
-  text-align: center;
 `;
 
 export default Home;

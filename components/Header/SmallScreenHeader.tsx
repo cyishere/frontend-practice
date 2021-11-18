@@ -6,9 +6,7 @@ import UnstyledButton from "../UnstyledButton";
 import { QUERIES } from "@/styles/constants";
 import { SmallScreenNavbar } from "../Navbar";
 
-interface SmallScreenHeaderProps {}
-
-const SmallScreenHeader: React.FC<SmallScreenHeaderProps> = () => {
+const SmallScreenHeader: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onDismiss = () => setIsOpen(!isOpen);

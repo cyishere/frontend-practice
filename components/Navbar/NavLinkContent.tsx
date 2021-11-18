@@ -1,8 +1,8 @@
 import { Fragment } from "react";
+import styled from "styled-components";
 import Link from "next/link";
 
 import { TextLink } from "../Link";
-import styled from "styled-components";
 import { COLORS } from "@/styles/constants";
 
 interface NavLinkProps {

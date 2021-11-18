@@ -1,9 +1,8 @@
 import styled from "styled-components";
+
 import NavLinkContent from "./NavLinkContent";
 
-interface LargeScreenNavbarProps {}
-
-const LargeScreenNavbar: React.FC<LargeScreenNavbarProps> = () => {
+const LargeScreenNavbar: React.FC = () => {
   return (
     <nav>
       <List>

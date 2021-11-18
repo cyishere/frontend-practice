@@ -5,9 +5,7 @@ import { BREAKPOINTS, QUERIES } from "@/styles/constants";
 import { TextLink } from "../Link";
 import { LargeScreenNavbar } from "../Navbar";
 
-interface LargeScreenHeaderProps {}
-
-const LargeScreenHeader: React.FC<LargeScreenHeaderProps> = () => {
+const LargeScreenHeader: React.FC = () => {
   return (
     <Wrapper>
       <Container>
@@ -25,23 +23,10 @@ const LargeScreenHeader: React.FC<LargeScreenHeaderProps> = () => {
 
 const Wrapper = styled.header`
   display: none;
-  margin: 0 auto 5rem auto;
-  max-width: 66.666667%;
+  margin-bottom: 5rem;
 
   @media ${QUERIES.largerThanTablet} {
     display: block;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  @media ${QUERIES.largerThanLaptop} {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  @media ${QUERIES.largerThanDesktop} {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
   }
 `;
 
@@ -50,9 +35,13 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: ${BREAKPOINTS.laptop / 16}rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 1.5rem;
   margin: 0 auto;
+
+  @media ${QUERIES.largerThanLaptop} {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 const Logo = styled.h1`
