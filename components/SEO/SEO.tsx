@@ -17,7 +17,9 @@ const SEO: React.FC<Props> = ({ title, description, pathname }) => {
   return (
     <Head>
       <meta charSet="UTF-8" />
-      <title>{title} | Projects of Frontend Practice</title>
+      <title>
+        {title} | CY, a Frontend Developer also do fullstack development.
+      </title>
       <meta name="description" content={content} />
       <meta name="robots" content="index, follow" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />

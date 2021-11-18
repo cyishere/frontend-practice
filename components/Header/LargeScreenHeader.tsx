@@ -23,7 +23,7 @@ const LargeScreenHeader: React.FC = () => {
 
 const Wrapper = styled.header`
   display: none;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 
   @media ${QUERIES.largerThanTablet} {
     display: block;

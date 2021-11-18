@@ -3,11 +3,7 @@ import styled from "styled-components";
 const Hero: React.FC = () => {
   return (
     <Wrapper>
-      <BackToPortfolioWrapper>
-        <BackToPortfolio href="https://cyishere.dev/portfolio">
-          back to all portfolio
-        </BackToPortfolio>
-      </BackToPortfolioWrapper>
+      <Intro>Not a long time ago in a developer&#39;s portfolio...</Intro>
       <Heading>
         <The>
           <TheText>The</TheText>
@@ -28,14 +24,11 @@ const Wrapper = styled.section`
   padding: 3rem 1rem 4.5rem 1rem;
 `;
 
-const BackToPortfolioWrapper = styled.p`
-  margin-bottom: 2rem;
-`;
-
-const BackToPortfolio = styled.a`
+const Intro = styled.p`
   font-family: "Barlow", sans-serif;
   font-size: ${24 / 16}rem;
   color: var(--clr-blue);
+  margin-bottom: 2rem;
 `;
 
 const Heading = styled.h1`

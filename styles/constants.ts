@@ -2,6 +2,7 @@ export const COLORS = {
   white: "0deg 0% 100%",
   black: "216.9deg 19.1% 26.7%",
   orange: "37.7deg 92.1% 50.2%",
+  pink: "330deg 81% 60%",
   green: {
     50: "155.3deg 81% 95.9%",
     300: "149.3deg 80.4% 90%",
@@ -9,10 +10,14 @@ export const COLORS = {
   },
   yellow: "54deg 99% 62%",
   blue: "200deg 100% 34%",
+  gray: {
+    100: "0deg 0% 96.5%",
+  },
 };
 
 export const FONTS = {
   primary: `ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji`,
+  heading: `"Barlow", sans-serif`,
 };
 
 export const BREAKPOINTS = {

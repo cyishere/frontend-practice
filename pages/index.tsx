@@ -1,51 +1,51 @@
 import type { NextPage } from "next";
 import { Fragment } from "react";
 import styled from "styled-components";
-import Link from "next/link";
 
 import SEO from "@/components/SEO";
 import GlobalStyles from "@/styles/GlobalStyles";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import { PROJECTS } from "@/data/projects";
+import ProjectGrid from "@/components/ProjectGrid";
+import { COLORS, QUERIES } from "@/styles/constants";
 
 const Home: NextPage = () => {
   return (
     <Fragment>
-      <SEO title="Home" pathname="/" />
+      <SEO title="The Clone Webs" pathname="/" />
       <Header />
       <Hero />
       <Wrapper>
-        <HeaderWrapper>
-          <PageHeading>Projects of Frontend Practice</PageHeading>
-          <p>
-            Become a better frontend developer by recreating{" "}
-            <strong>real websites</strong>.
-          </p>
-          <p>
-            Projects from{" "}
-            <a
+        <Intro>
+          <IntroHeading>
+            <Marker>The Clone Album:</Marker>
+            To hone my skills as a frontend developer, I recreate real websites,
+            some of which were chosen by the inspiring{" "}
+            <FP
               href="https://www.frontendpractice.com/"
               target="_blank"
               rel="noreferrer"
             >
               Frontend Practice
-            </a>
-            .
-          </p>
-        </HeaderWrapper>
+            </FP>{" "}
+            and others from which I believe I can learn a lot.
+          </IntroHeading>
+        </Intro>
         <Main>
-          <List>
-            <ListItem>
-              <Link href="/ableton">Ableton</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="/backstagetalks">Backstage Talks</Link>
-            </ListItem>
-            <ListItem>Monstercat</ListItem>
-            <ListItem>Déplacé Maison</ListItem>
-          </List>
+          {PROJECTS.map((project) => (
+            <ProjectWrapper key={project.id}>
+              <ProjectGrid project={project} />
+            </ProjectWrapper>
+          ))}
         </Main>
+
+        <BackToAllWrapper>
+          <BackToAll href="https://cyishere.dev/portfolio">
+            Back to All Portfolio
+          </BackToAll>
+        </BackToAllWrapper>
       </Wrapper>
       <Footer />
       <GlobalStyles />
@@ -53,46 +53,71 @@ const Home: NextPage = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   max-width: 960px;
-  padding: 32px;
+  padding: 0 2rem;
   margin: 0 auto;
   font-family: "Poppins", sans-serif;
   font-size: ${18 / 16}rem;
   font-weight: 400;
   line-height: 1.5;
+
+  @media ${QUERIES.largerThanTablet} {
+    padding: 0;
+  }
 `;
 
-const HeaderWrapper = styled.section`
-  margin-bottom: 3rem;
-  text-align: center;
+const Intro = styled.section`
+  padding: 6rem 1rem;
+  border-bottom: 1px solid hsl(${COLORS.black} / 0.3);
 `;
 
-const PageHeading = styled.h1`
-  font-family: "Barlow", sans-serif;
-  font-size: ${60 / 16}rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 0.5em;
+const Marker = styled.marker`
+  background-image: linear-gradient(45deg, gold, deeppink);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: block;
+  margin-bottom: 1rem;
 `;
 
-const Main = styled.main`
-  margin-bottom: 3rem;
+const IntroHeading = styled.h2`
+  width: 100%;
+  max-width: 60ch;
+  font-family: var(--ff-heading);
+  font-size: ${36 / 16}rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: auto;
 `;
 
-const List = styled.ol`
-  list-style: revert;
+const FP = styled.a`
+  color: var(--clr-pink);
+  text-decoration: underline;
 `;
 
-const ListItem = styled.li`
-  display: list-item;
+const Main = styled.section`
+  padding-top: 10rem;
+  margin-bottom: 10rem;
+`;
+
+const ProjectWrapper = styled.div`
   &:not(:last-of-type) {
-    margin-bottom: 0.5em;
+    margin-bottom: 10rem;
   }
+`;
 
-  &::marker {
-    color: plum;
-  }
+const BackToAllWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+`;
+
+const BackToAll = styled.a`
+  color: var(--clr-white);
+  background-color: var(--clr-pink);
+  padding: 1rem 2rem;
 `;
 
 export default Home;
