@@ -1,4 +1,4 @@
-import { CSSProperties, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 import { MainList, SubList } from "../NavLink";
@@ -9,7 +9,7 @@ import PrimaryLogo from "../PrimaryLogo";
 import MenuButton from "../MenuButton";
 
 const Header: React.FC = () => {
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   const stateColor = isMobile ? "white" : "black";
   const stateRotate = isMobile ? "rotate(180deg)" : "rotate(0deg)";
