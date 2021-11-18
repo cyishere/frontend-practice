@@ -7,6 +7,8 @@ export const COLORS = {
     300: "149.3deg 80.4% 90%",
     500: "186.2deg 93.5% 81.8%",
   },
+  yellow: "54deg 99% 62%",
+  blue: "200deg 100% 34%",
 };
 
 export const FONTS = {
