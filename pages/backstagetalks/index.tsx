@@ -11,7 +11,7 @@ import Delaration from "@/components/Delaration";
 const Home: NextPage = () => {
   const [index, setIndex] = useState(0);
 
-  const onLeave = (origin: any, destination: any, direction: "down" | "up") => {
+  const onLeave = (origin: any, _: any, direction: "down" | "up") => {
     if (direction === "down") {
       setIndex(origin.index + 1);
     } else if (direction === "up") {
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
     console.log("Leaving section " + origin.index);
   };
 
-  const afterLoad = (origin: any, destination: any, direction: any) => {
+  const afterLoad = (_: any, destination: any) => {
     console.log("After load: " + destination.index);
   };
 

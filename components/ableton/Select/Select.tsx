@@ -1,3 +1,4 @@
+import VisuallyHidden from "@/components/VisuallyHidden";
 import React, { CSSProperties } from "react";
 import styled from "styled-components";
 import { SmallArrow } from "../Assets";
@@ -21,6 +22,7 @@ const Select: React.FC<SelectProps> = ({
 
   return (
     <Wrapper>
+      <VisuallyHidden>{label}</VisuallyHidden>
       <NativeSelect value={value} onChange={onChange}>
         {children}
       </NativeSelect>
