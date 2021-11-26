@@ -9,24 +9,58 @@ interface Position {
 const INITIAL_POSITION_STATE = { x: 0, y: 0 };
 const TAIL_LENGTH = 20;
 
+let loopHelper: number[] = [];
+for (let i = 0; i < TAIL_LENGTH; i++) {
+  loopHelper.push(i);
+}
+
 const Cursor: React.FC = () => {
-  const [cursorPosition, setCursorPosition] = useState<Position>(
-    INITIAL_POSITION_STATE
-  );
-  const [current, setCurrent] = useState<Position>(INITIAL_POSITION_STATE);
-  const [next, setNext] = useState<Position>(INITIAL_POSITION_STATE);
-  const [cursorHistory, setCursorHistory] = useState(
+  const [mouseX, setMouseX] = useState(0);
+  const [mouseY, setMouseY] = useState(0);
+
+  const cursorHistoryRef = useRef<Position[]>(
     Array(TAIL_LENGTH).fill(INITIAL_POSITION_STATE)
   );
+  const currentRef = useRef<Position | null>(null);
+  const nextRef = useRef<Position | null>(null);
+
+  const xDiffRef = useRef<number | null>(null);
+  const yDiffRef = useRef<number | null>(null);
 
   const cursorCircles = useRef<HTMLDivElement[]>(new Array());
 
-  useEffect(() => {
-    addEventListener();
-    // updateCursor();
+  const animationRef = useRef<number | null>(null);
 
-    return () => removeEventListner();
-  }, []);
+  function onMouseMove(event: MouseEvent) {
+    setMouseX(event.clientX);
+    setMouseY(event.clientY);
+  }
+
+  function updateCursor() {
+    cursorHistoryRef.current.shift();
+    cursorHistoryRef.current.push({ x: mouseX, y: mouseY });
+
+    for (let i = 0; i < TAIL_LENGTH; i++) {
+      currentRef.current = cursorHistoryRef.current[i];
+      nextRef.current =
+        cursorHistoryRef.current[i + 1] ||
+        cursorHistoryRef.current[TAIL_LENGTH - 1];
+
+      xDiffRef.current = nextRef.current.x - currentRef.current.x;
+      yDiffRef.current = nextRef.current.y - currentRef.current.y;
+
+      currentRef.current.x += xDiffRef.current * 0.5;
+      currentRef.current.y += yDiffRef.current * 0.5;
+
+      cursorCircles.current[i].style.transform = `
+        translate(${currentRef.current.x}px, ${currentRef.current.y}px) scale(${
+        i / TAIL_LENGTH
+      })
+      `;
+
+      animationRef.current = requestAnimationFrame(updateCursor);
+    }
+  }
 
   const addEventListener = () => {
     document.addEventListener("mousemove", onMouseMove, false);
@@ -36,32 +70,16 @@ const Cursor: React.FC = () => {
     document.removeEventListener("mousemove", onMouseMove);
   };
 
-  let loopHelper: number[] = [];
-  for (let i = 0; i < TAIL_LENGTH; i++) {
-    loopHelper.push(i);
-  }
+  useEffect(() => {
+    addEventListener();
+    updateCursor();
 
-  function onMouseMove(event: MouseEvent) {
-    console.log("event:", event);
-    setCursorPosition({ x: event.clientX, y: event.clientY });
-    console.log(cursorPosition);
-
-    const [_, ...rest] = cursorHistory;
-    setCursorHistory([...rest, cursorPosition]);
-
-    for (let i = 0; i < TAIL_LENGTH; i++) {
-      setCurrent(cursorHistory[i]);
-      setNext(cursorHistory[i + 1] || cursorHistory[TAIL_LENGTH - 1]);
-
-      let xDiff = next.x - current.x;
-      let yDiff = next.y - current.y;
-
-      setCurrent({
-        x: current.x + xDiff * 0.35,
-        y: current.y + yDiff * 0.35,
-      });
-    }
-  }
+    return () => {
+      removeEventListner();
+      cancelAnimationFrame(animationRef.current!);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mouseX, mouseY]);
 
   return (
     <Wrapper>
@@ -70,7 +88,9 @@ const Cursor: React.FC = () => {
           key={i}
           ref={(element: HTMLDivElement) => cursorCircles.current.push(element)}
           style={{
-            transform: `translate(${current.x}px, ${current.y}px) scale(${
+            transform: `translate(${
+              currentRef.current ? currentRef.current.x : 0
+            }px, ${currentRef.current ? currentRef.current.y : 0}px) scale(${
               i / TAIL_LENGTH
             })`,
           }}
