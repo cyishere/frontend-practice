@@ -72,7 +72,7 @@ const Cursor: React.FC = () => {
 
   useEffect(() => {
     addEventListener();
-    updateCursor();
+    // updateCursor();
 
     return () => {
       removeEventListner();
@@ -87,13 +87,13 @@ const Cursor: React.FC = () => {
         <CursorCircle
           key={i}
           ref={(element: HTMLDivElement) => cursorCircles.current.push(element)}
-          style={{
-            transform: `translate(${
-              currentRef.current ? currentRef.current.x : 0
-            }px, ${currentRef.current ? currentRef.current.y : 0}px) scale(${
-              i / TAIL_LENGTH
-            })`,
-          }}
+          // style={{
+          //   transform: `translate(${
+          //     currentRef.current ? currentRef.current.x : 0
+          //   }px, ${currentRef.current ? currentRef.current.y : 0}px) scale(${
+          //     i / TAIL_LENGTH
+          //   })`,
+          // }}
         />
       ))}
     </Wrapper>
