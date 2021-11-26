@@ -1,22 +1,39 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 
+/**
+ * @typedef {{ x: number, y: number}} Position x/y position of cursor
+ */
 interface Position {
   x: number;
   y: number;
 }
 
+/**
+ * @type {Position} INITIAL_POSITION_STATE the initial position of the cursor
+ */
 const INITIAL_POSITION_STATE = { x: 0, y: 0 };
+
+/**
+ * @constant {number} TAIL_LENGTH how many sub-elements to form the cursor tail
+ */
 const TAIL_LENGTH = 20;
 
+/**
+ * @member {Array.<number>} loopHelper a helper variable for looping over and creating the sub-element-tails
+ */
 let loopHelper: number[] = [];
 for (let i = 0; i < TAIL_LENGTH; i++) {
   loopHelper.push(i);
 }
 
+/**
+ * The main cursor component
+ * @returns JSX
+ */
 const Cursor: React.FC = () => {
-  const [mouseX, setMouseX] = useState(0);
-  const [mouseY, setMouseY] = useState(0);
+  const mouseXRef = useRef(0);
+  const mouseYRef = useRef(0);
 
   const cursorHistoryRef = useRef<Position[]>(
     Array(TAIL_LENGTH).fill(INITIAL_POSITION_STATE)
@@ -32,13 +49,16 @@ const Cursor: React.FC = () => {
   const animationRef = useRef<number | null>(null);
 
   function onMouseMove(event: MouseEvent) {
-    setMouseX(event.clientX);
-    setMouseY(event.clientY);
+    mouseXRef.current = event.clientX;
+    mouseYRef.current = event.clientY;
   }
 
   function updateCursor() {
     cursorHistoryRef.current.shift();
-    cursorHistoryRef.current.push({ x: mouseX, y: mouseY });
+    cursorHistoryRef.current.push({
+      x: mouseXRef.current,
+      y: mouseYRef.current,
+    });
 
     for (let i = 0; i < TAIL_LENGTH; i++) {
       currentRef.current = cursorHistoryRef.current[i];
@@ -57,9 +77,9 @@ const Cursor: React.FC = () => {
         i / TAIL_LENGTH
       })
       `;
-
-      animationRef.current = requestAnimationFrame(updateCursor);
     }
+
+    animationRef.current = requestAnimationFrame(updateCursor);
   }
 
   const addEventListener = () => {
@@ -72,14 +92,14 @@ const Cursor: React.FC = () => {
 
   useEffect(() => {
     addEventListener();
-    // updateCursor();
+    updateCursor();
 
     return () => {
       removeEventListner();
       cancelAnimationFrame(animationRef.current!);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mouseX, mouseY]);
+  }, []);
 
   return (
     <Wrapper>
@@ -87,13 +107,6 @@ const Cursor: React.FC = () => {
         <CursorCircle
           key={i}
           ref={(element: HTMLDivElement) => cursorCircles.current.push(element)}
-          // style={{
-          //   transform: `translate(${
-          //     currentRef.current ? currentRef.current.x : 0
-          //   }px, ${currentRef.current ? currentRef.current.y : 0}px) scale(${
-          //     i / TAIL_LENGTH
-          //   })`,
-          // }}
         />
       ))}
     </Wrapper>
