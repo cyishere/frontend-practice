@@ -26,31 +26,8 @@ I recreate some real website pages picked by [Frontend Practice](https://fronten
 
 ## Déplacé Maison
 
-```css
-transform: translate3d(0px, 0vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(
-    0deg
-  )
-  rotateZ(0deg) skew(0deg, 0deg);
-transform-style: preserve-3d;
+### To-Dos
 
-font-size: 0.85vw;
-line-height: 1;
-
-font-size: 14vw;
-line-height: 12.8vw;
-
-font-size: 4vw;
-line-height: 3.5vw;
-
-font-size: 1.5vw;
-line-height: 1;
-
-width: 5vw;
-height: 5vw;
-
-font-size: 2.5vw;
-line-height: 1;
-
-font-size: 4.3vw;
-line-height: 4.57vw;
-```
+- [x] Gooey cursor;
+- [ ] Slider;
+- [ ] Marquee;
