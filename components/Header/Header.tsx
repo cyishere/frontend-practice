@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Link from "next/link";
 import styled from "styled-components";
 import { Menu } from "react-feather";
 
@@ -16,9 +15,7 @@ const Header: React.FC = () => {
   return (
     <MaxWidthWrapper>
       <Wrapper>
-        <Link href="/" passHref>
-          <Logo>CY is here.</Logo>
-        </Link>
+        <Logo href="https://cyishere.dev">CY is here.</Logo>
 
         <DesktopNavbar />
 

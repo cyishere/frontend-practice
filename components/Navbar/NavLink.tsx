@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Link from "next/link";
 import { CSSProperties } from "react";
 
 import { QUERIES } from "@/styles/constants";
@@ -16,41 +15,31 @@ const NavLink: React.FC = () => {
   return (
     <Wrapper role="navigation" aria-label="Main" id="primary-navigation">
       <NavLinkItem style={getBgImage(false)}>
-        <Link href="/" passHref>
-          <NavLinkAnchor>
-            <Item data-content="home">home</Item>
-          </NavLinkAnchor>
-        </Link>
+        <NavLinkAnchor href="https://cyishere.dev">
+          <Item data-content="home">home</Item>
+        </NavLinkAnchor>
       </NavLinkItem>
       <NavLinkItem style={getBgImage(true)}>
-        <Link href="/portfolio" passHref>
-          <NavLinkAnchor>
-            <Item data-content="portfolio">portfolio</Item>
-          </NavLinkAnchor>
-        </Link>
+        <NavLinkAnchor href="https://cyishere.dev/portfolio">
+          <Item data-content="portfolio">portfolio</Item>
+        </NavLinkAnchor>
       </NavLinkItem>
       <NavLinkItem style={getBgImage(false)}>
-        <Link href="/blog" passHref>
-          <NavLinkAnchor>
-            <Item data-content="blog">blog</Item>
-          </NavLinkAnchor>
-        </Link>
+        <NavLinkAnchor href="https://cyishere.dev/blog">
+          <Item data-content="blog">blog</Item>
+        </NavLinkAnchor>
       </NavLinkItem>
       <NavLinkItem style={getBgImage(false)}>
-        <Link href="/about" passHref>
-          <NavLinkAnchor>
-            <Item data-content="about">about</Item>
-          </NavLinkAnchor>
-        </Link>
+        <NavLinkAnchor href="https://cyishere.dev/about">
+          <Item data-content="about">about</Item>
+        </NavLinkAnchor>
       </NavLinkItem>
       <NavLinkItem style={getBgImage(false)}>
-        <Link href="/hire-me" passHref>
-          <NavLinkAnchor>
-            <Item data-content="hire me!">
-              <NavLinkAnchorEm>hire me!</NavLinkAnchorEm>
-            </Item>
-          </NavLinkAnchor>
-        </Link>
+        <NavLinkAnchor href="https://cyishere.dev/hire-me">
+          <Item data-content="hire me!">
+            <NavLinkAnchorEm>hire me!</NavLinkAnchorEm>
+          </Item>
+        </NavLinkAnchor>
       </NavLinkItem>
     </Wrapper>
   );
