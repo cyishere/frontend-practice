@@ -13,6 +13,9 @@ export const COLORS = {
   gray: {
     100: "0deg 0% 96.5%",
   },
+  khakiLight: "0deg 0% 98%",
+  textPrimary: "240deg 2% 30%",
+  purplePrimary: "248.4deg 74.2% 47.1%",
 };
 
 export const FONTS = {

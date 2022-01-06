@@ -22,6 +22,9 @@ const GlobalStyles = createGlobalStyle`
     --clr-blue: hsl(${COLORS.blue});
     --clr-pink: hsl(${COLORS.pink});
     --clr-gray-100: hsl(${COLORS.gray[100]});
+    --clr-khaki-light: hsl(${COLORS.khakiLight});
+    --clr-text-primary: hsl(${COLORS.textPrimary});
+    --clr-purple-primary: hsl(${COLORS.purplePrimary});
 
     --ff-primary: ${FONTS.primary};
     --ff-heading: ${FONTS.heading};
@@ -38,7 +41,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-size: 16px;
     font-family: var(--ff-primary);
-    color: var(--clr-black);
+    background-color: var(--clr-khaki-light);
+    color: var(--clr-text-primary);
   }
 
   a {
