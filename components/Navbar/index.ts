@@ -1,2 +1,2 @@
-export { default as SmallScreenNavbar } from "./SmallScreenNavbar";
-export { default as LargeScreenNavbar } from "./LargeScreenNavbar";
+export { default as MobileNavbar } from "./MobileNavbar";
+export { default as DesktopNavbar } from "./DesktopNavbar";

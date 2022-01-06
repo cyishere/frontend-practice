@@ -16,11 +16,26 @@ export const COLORS = {
   khakiLight: "0deg 0% 98%",
   textPrimary: "240deg 2% 30%",
   purplePrimary: "248.4deg 74.2% 47.1%",
+  purpleLight: "246deg 62.5% 96.9%",
+  cyan: "170.2deg 42.7% 72%",
 };
 
 export const FONTS = {
   primary: `ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji`,
+  main: `'Poppins', sans-serif;`,
   heading: `"Barlow", sans-serif`,
+  logo: `'Aref Ruqaa', serif`,
+};
+
+export const FONT_SIZES = {
+  sm: `${14 / 16}rem`,
+  base: `${16 / 16}rem`,
+  md: `${18 / 16}rem`,
+  lg: `${24 / 16}rem`,
+  xl: `${28 / 16}rem`,
+  xxl: `${32 / 16}rem`,
+  xxxl: `${36 / 16}rem`,
+  big: `${48 / 16}rem`,
 };
 
 export const BREAKPOINTS = {

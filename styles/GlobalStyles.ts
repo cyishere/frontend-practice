@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-import { COLORS, FONTS } from "./constants";
+import { COLORS, FONTS, FONT_SIZES } from "./constants";
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -25,10 +25,22 @@ const GlobalStyles = createGlobalStyle`
     --clr-khaki-light: hsl(${COLORS.khakiLight});
     --clr-text-primary: hsl(${COLORS.textPrimary});
     --clr-purple-primary: hsl(${COLORS.purplePrimary});
+    --clr-cyan: hsl(${COLORS.cyan});
 
     --ff-primary: ${FONTS.primary};
     --ff-heading: ${FONTS.heading};
     --ff-star-wars: "StarJedi SE", sans-serif;
+    --ff-main: ${FONTS.main};
+    --ff-logo: ${FONTS.logo};
+
+    --font-size-sm: ${FONT_SIZES.sm};
+    --font-size-base: ${FONT_SIZES.base};
+    --font-size-md: ${FONT_SIZES.md};
+    --font-size-lg: ${FONT_SIZES.lg};
+    --font-size-xl: ${FONT_SIZES.xl};
+    --font-size-xxl: ${FONT_SIZES.xxl};
+    --font-size-xxxl: ${FONT_SIZES.xxxl};
+    --font-size-big: ${FONT_SIZES.big};
 
     --shadow-color: 0deg 0% 63%;
     --shadow-elevation-medium:
